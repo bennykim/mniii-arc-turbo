@@ -1,0 +1,23 @@
+{
+  "name": "@repo/msw",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint *.ts*"
+  },
+  "peerDependencies": {
+    "msw": "^2.4.9"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "typescript": "^5.1.3"
+  }
+}

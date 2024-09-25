@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@repo/ui/card";
 import { type ChartConfig, ChartContainer } from "@repo/ui/chart";
+import { useEffect } from "react";
 import { Bar, BarChart, CartesianGrid } from "recharts";
 
 const chartData = [
@@ -50,6 +51,17 @@ function Gradient({
 }
 
 export default function Page(): JSX.Element {
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch("http://localhost:3000/api/msg");
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return res.json();
+    }
+    getData();
+  }, []);
+
   return (
     <main className="relative min-h-screen p-24 bg-primary">
       <span>hello</span>
